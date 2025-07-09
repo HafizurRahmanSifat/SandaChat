@@ -1,0 +1,210 @@
+/* Chat container */
+#chatDiv {
+    max-height: 60vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+/* Message card styling */
+.message-card {
+    background-color: #f9fafb;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    transition: background-color 0.2s ease;
+}
+
+.message-card:hover {
+    background-color: #f1f5f9;
+}
+
+/* User info section */
+.message-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.message-header img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+/* User name and timestamp */
+.message-user {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.message-time {
+    font-size: 0.75rem;
+    color: #6c757d;
+    margin-left: 0.5rem;
+}
+
+/* Message content */
+.message-content {
+    position: relative;
+}
+
+.my-message{
+  right: 5px;
+  background-color: lightgreen;
+}
+
+.message-content code {
+    background-color: #f1f5f9;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.message-content pre {
+    background-color: #f8fafc;
+    padding: 0.75rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0.5rem 0 0;
+}
+
+/* Copy button */
+.message-card-copy {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #6c757d;
+    font-size: 0.75rem;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    opacity: 0.5;
+    transition: opacity 0.2s ease, color 0.2s, border-color 0.2s;
+    z-index: 1;
+}
+
+.message-card:hover .message-card-copy {
+    opacity: 1;
+}
+
+.message-card-copy:hover {
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.message-card-copy.copied {
+    color: #198754;
+    border-color: #198754;
+}
+
+/* File preview area */
+.file-preview {
+    margin-top: 0.75rem;
+    padding: 0.5rem;
+    background: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Each uploaded file display */
+.upload-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+}
+
+/* Load more button */
+.load-more-btn {
+    margin: 1rem auto;
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.load-more-btn:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.02);
+}
+
+.load-more-btn:active {
+    transform: scale(0.98);
+}
+
+.textarea-wrapper {
+  position: relative;
+}
+
+.attach-file-btn {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+}
+
+.attach-file-btn:hover {
+  color: #000;
+}
+
+/* Tooltip on hover */
+.attach-file-btn::after {
+  content: "Attach file";
+  position: absolute;
+  top: -30px;
+  left: 0;
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0;
+  white-space: nowrap;
+  transition: 0.2s ease;
+  pointer-events: none;
+}
+
+.attach-file-btn:hover::after {
+  opacity: 1;
+}
+
+/* Style for the title logo */
+.title-logo {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.title-logo:hover {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: #000000;
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
